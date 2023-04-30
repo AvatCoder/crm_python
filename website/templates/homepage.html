@@ -3,7 +3,41 @@
 {%block content%}
 
 {%if user.is_authenticated%}
-    <h2>Hello {{user}}</h2>
+<table class="table table-hover table-bordered" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">State</th>
+        <th scope="col">City</th>
+        <th scope="col">Address</th>
+        <th scope="col">Zip-Code</th>
+        <th scope="col">Created Date</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+     {%for item in record%} 
+        <tr>
+            <th scope="row" > <a href="/record/{{item.pk}}/"> {{item.pk}} </a> </th>
+            <td>{{item.first_name}}</td>
+            <td>{{item.last_name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.state}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.zip_code}}</td>
+            <td>{{item.created_time}}</td>
+        </tr>
+    {%endfor%}
+    </tbody>
+  </table>
+
 {%else%}
 <div class="col-m-6 offset-3">
     <h1>Login</h1>

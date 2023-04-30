@@ -7,7 +7,6 @@
 
 <form action="{%url 'register'%}" method='POST'>
     {% csrf_token %}
-   <form>
             <div class="mb-3">
                 <input  type="text" placeholder="Username" name="username" class="form-control" required>
             </div>
@@ -39,8 +38,7 @@
             <button type="submit" class="btn btn-secondary">Register</button>
 
             <br>
-            <p>have account?<a href="{%url 'home'%}"> Login</a></p>
-        </form>
+            <p>have account?<a href="{%url 'home'%}"> Login</a></p>  
 </form>
 </div>
 {%endblock%}
